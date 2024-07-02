@@ -1,15 +1,15 @@
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    padding: 7px;
+    padding: 10px;
     background: #f9f9f9;
     color: #333;
 }
 
 #content {
-    margin: 7px;
+    margin: 10px;
 }
 
 input[type="number"], button {
-    margin-top: 0px;
+    margin-top: 5px;
 }

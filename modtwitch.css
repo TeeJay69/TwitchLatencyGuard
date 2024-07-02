@@ -1,4 +1,4 @@
-:root[show_FF_buffer_btn] .FF_buffer_btn {
+/* :root[show_FF_buffer_btn] .FF_buffer_btn {
     color: var(--color-fill-button-icon, #efeff1);
     border-radius: var(--border-radius-medium, 0.4rem);
     width: var(--button-size-default, 3rem);
@@ -18,7 +18,7 @@
 
 :root:not([show_FF_buffer_btn]) .FF_buffer_btn {
     display: none;
-}
+} */
 
 :root.twitch_latency_hide_menu div[role="dialog"] {pointer-events: none !important; opacity: 0 !important;}
 
@@ -59,5 +59,19 @@
 :root:not([hide_video_stats])[lang="zh-CN"] .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) :is(div, thead, p:not([aria-label="直播者延迟"]):not([aria-label="缓冲区大小"])),
 :root:not([hide_video_stats])[lang="zh-TW"] .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) :is(div, thead, p:not([aria-label="實況主延遲"]):not([aria-label="緩衝區大小"])) {display: none !important;}
 :root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) :not(p) {padding: 0 !important;}
-:root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) p {margin-right: -16px; padding: 2px 6px; filter: drop-shadow(0px 0px 2px #000) drop-shadow(0px 0px 0px #0009); font-weight: bold;}
-:root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) {transform: scale(0.8); transform-origin: 0 0; background: #0004 !important;}
+
+:root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) p {
+    margin-right: 0; /* Adjust or remove this if it's causing the white line */
+    padding: 0px 0px;
+    filter: drop-shadow(0px 0px 2px #000) drop-shadow(0px 0px 0px #0009);
+    font-weight: bold;
+    background: #000; /* Ensure the background matches expected color */
+}
+
+:root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) {
+    transform: scale(0.0);
+    transform-origin: 0 0;
+    background: rgba(0, 0, 0, 0.4); /* Adjust the opacity to see if it affects the white line */
+}
+/* :root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) p {margin-right: -16px; padding: 2px 6px; filter: drop-shadow(0px 0px 2px #000) drop-shadow(0px 0px 0px #0009); font-weight: bold;}
+:root:not([hide_video_stats]) .video-player [data-a-target="player-overlay-video-stats"]:not(:hover) {transform: scale(0.8); transform-origin: 0 0; background: #0004 !important;} */
