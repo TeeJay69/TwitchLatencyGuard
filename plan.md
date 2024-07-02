@@ -32,9 +32,9 @@ generation
 
 
 ## Feature Dev:
-- [ ] Make latency limit an adjustable setting 
+- [x] Make latency limit an adjustable setting 
 - [ ] Allow different latency limits for different channels
-
+- [ ] Save settings for next browser session
 
 
 ## Critical ToDo's:
@@ -45,8 +45,6 @@ generation
 ## Reevaluate:
 - [Declined] ~~xxx~~
 - [x] xxx
-- [ ] Reliance on FFZ extension delay tool
-
 
 ## Feature requests:
 - [Declined] ~~xxx~~
@@ -56,7 +54,7 @@ generation
 ## Known Bugs:
 - [Closed] xxx
 - [ ] White line appearing around the video stats box when changing zoom levels
-- [ ] Video stats must be manually activated before the 
+- [ ] Video stats must be manually activated if FFZ extension latency widget is disabled
 
 
 ## Trashcan:
@@ -66,3 +64,14 @@ generation
 ## Parking Lot
 <!-- code -->
 <!-- // const delay2 = document.querySelector(`[aria-label="Latency To Broadcaster"]`)?.textContent.match(/([0-9.]+)/)?.[1]; // Latency To Broadcaster from the video stats table-->
+<!-- chrome.storage.sync.get('showVideoStats', function(data) {
+        if (data.showVideoStats) {
+            document.documentElement.setAttribute('show_video_stats', '');
+        } else {
+            document.documentElement.removeAttribute('show_video_stats');
+        }
+    }); -->
+<!-- 
+        <label for="toggleVideoStats">Show Video Stats</label>
+        <input type="checkbox" id="toggleVideoStats">
+         -->

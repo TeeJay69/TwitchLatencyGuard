@@ -1,25 +1,3 @@
-/* :root[show_FF_buffer_btn] .FF_buffer_btn {
-    color: var(--color-fill-button-icon, #efeff1);
-    border-radius: var(--border-radius-medium, 0.4rem);
-    width: var(--button-size-default, 3rem);
-    height: var(--button-size-default, 3rem);
-    display: flex;
-}
-.FF_buffer_btn > svg {
-    fill: currentcolor;
-    margin: auto;
-}
-.FF_buffer_btn:hover {
-    background-color: var(--color-background-button-text-hover, rgba(255, 255, 255, 0.2));
-}
-.FF_buffer_btn:active {
-    background-color: var(--color-background-button-text-active, rgba(255, 255, 255, 0.15));
-}
-
-:root:not([show_FF_buffer_btn]) .FF_buffer_btn {
-    display: none;
-} */
-
 :root.twitch_latency_hide_menu div[role="dialog"] {pointer-events: none !important; opacity: 0 !important;}
 
 
