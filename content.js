@@ -1,7 +1,7 @@
-// Twitch Latency Guard
+// TwitchLatencyGuard
 
 window.addEventListener('load', function() {
-    function main_listener(interval = 900){
+    function main_listener(interval = 1350){
         let last_timeStamp = 0;
         return async function(event){
             if(event.timeStamp - last_timeStamp <= interval) return; // event throttle
@@ -57,5 +57,5 @@ window.addEventListener('load', function() {
             });
         });
     }
-    document.addEventListener("timeupdate", main_listener(900), true);
+    document.addEventListener("timeupdate", main_listener(1350), true);
 });

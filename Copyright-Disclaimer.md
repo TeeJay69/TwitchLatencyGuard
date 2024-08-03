@@ -1,4 +1,4 @@
-## Twitch-Latency-Guard Copyright (C) Disclaimer
+## TwitchLatencyGuard Copyright (C) Disclaimer
 
 Copyright (C) [2024] [T. Jason Weber]
 
