@@ -1,7 +1,7 @@
 // TwitchLatencyGuard
 
 window.addEventListener('load', function() {
-    function main_listener(interval = 1350){
+    function main_listener(interval = 2000){ // 1350 till 24-10-22
         let last_timeStamp = 0;
         return async function(event){
             if(event.timeStamp - last_timeStamp <= interval) return; // event throttle
