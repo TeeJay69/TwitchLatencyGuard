@@ -27,8 +27,9 @@ window.addEventListener('load', function() {
             if (delay2f > parseFloat(latLimit)) {
                 displayNotification(`Fast forwarding due to high latency ${delay2f}`)
                 document.querySelectorAll("video").forEach(video => {
-                    if (video.buffered.length) {
-                        video.currentTime = video.buffered.end(video.buffered.length - 1);
+                    if (video.buffered.length >= 1) {
+                        let bufferEnd = video.buffered.end(video.buffered.length - 1);
+                        video.currentTime = bufferEnd - 1; // Reduce buffer to 1 second
                     }
                 });
             }
