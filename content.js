@@ -1,5 +1,61 @@
 // TwitchLatencyGuard
 
+// Helper function to get the React internal instance
+function getReactInstance(element) {
+    for (const key in element) {
+        if (key.startsWith("__reactInternalInstance$")) {
+            return element[key];
+        }
+    }
+    return null;
+}
+
+// Helper function to find a node in the React tree
+function findReactNode(root, constraint) {
+    if (constraint(root)) {
+        return root;
+    }
+    let child = root.child;
+    while (child) {
+        const result = findReactNode(child, constraint);
+        if (result) {
+            return result;
+        }
+        child = child.sibling;
+    }
+    return null;
+}
+
+// Function to get the Twitch player instance
+function getPlayer() {
+    const container = document.querySelector('.video-player__container');
+    const reactInstance = getReactInstance(container);
+    if (!reactInstance) return null;
+
+    const node = findReactNode(reactInstance, node => node?.memoizedProps?.mediaPlayerInstance);
+    return node?.memoizedProps?.mediaPlayerInstance || null;
+}
+
+function changeQuality() {
+    const player = getPlayer();
+    if (player) {
+        const qualities = player.getQualities();
+        const currentQuality = player.getQuality();
+        const otherQualities = qualities.filter(q => q.group !== currentQuality);
+        if (otherQualities.length > 0) {
+            const newQuality = otherQualities[0].group;
+            player.setQuality(newQuality);
+            setTimeout(() => {
+                player.setQuality(currentQuality);
+            }, 1000);
+        } else {
+            console.log('No alternative quality available.');
+        }
+    } else {
+        console.log('Player instance not found.');
+    }
+}
+
 // Define the fast-forward methods
 function seekToLiveEdge() {
     document.querySelectorAll("video").forEach(video => {
@@ -8,23 +64,6 @@ function seekToLiveEdge() {
             video.currentTime = bufferEnd - 1; // Reduce buffer to 1 second
         }
     });
-}
-
-function changeQuality() {
-    const player = Array.from(document.querySelectorAll('*')).find(el => el?.player)?.player;
-    if (player) {
-        const qualities = player.getQualities();
-        const currentQuality = player.getQuality();
-        const newQuality = qualities.find(q => q.group !== currentQuality)?.group;
-        if (newQuality) {
-            player.setQuality(newQuality);
-            setTimeout(() => {
-                player.setQuality(currentQuality);
-            }, 1000);
-        }
-    } else {
-        console.log('Player instance not found.');
-    }
 }
 
 function reloadVideoElement() {
@@ -49,7 +88,7 @@ function speedUpPlayback() {
         video.playbackRate = 2.0;
         setTimeout(() => {
             video.playbackRate = originalRate;
-        }, 5000);
+        }, 2000);
     } else {
         console.log('Video element not found.');
     }
