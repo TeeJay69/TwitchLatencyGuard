@@ -20,16 +20,21 @@ window.addEventListener('load', function() {
             else{
                 return;
             }
-
+            
             const delay2f = parseFloat(delay2);
             const latLimit = await getLatLimit(); 
-
+    
             if (delay2f > parseFloat(latLimit)) {
-                displayNotification(`Fast forwarding due to high latency ${delay2f}`)
                 document.querySelectorAll("video").forEach(video => {
-                    if (video.buffered.length >= 1) {
+                    if (video.buffered.length) {
                         let bufferEnd = video.buffered.end(video.buffered.length - 1);
                         video.currentTime = bufferEnd - 1; // Reduce buffer to 1 second
+                        displayNotification(`Fast forwarding due to high latency ${delay2f}`)
+                        // video.pause();
+                        // setTimeout(() => {
+                        //     video.play();
+                        // }, 300);
+
                     }
                 });
             }
@@ -48,7 +53,7 @@ window.addEventListener('load', function() {
         notification.style.color = 'white';
         notification.style.zIndex = '10000';
         document.body.appendChild(notification);
-        setTimeout(() => notification.remove(), 3000);
+        setTimeout(() => notification.remove(), 2000);
     }
     
     async function getLatLimit(){
@@ -58,5 +63,43 @@ window.addEventListener('load', function() {
             });
         });
     }
-    document.addEventListener("timeupdate", main_listener(1350), true);
+
+    // Add the event listener for latency handling
+    document.addEventListener("timeupdate", main_listener(2000), true);
+
+    // function displayBufferedRanges() {
+    //     const video = document.querySelector('video');
+    //     if (video && video.buffered.length) {
+    //         let bufferedRanges = [];
+    //         for (let i = 0; i < video.buffered.length; i++) {
+    //             let start = video.buffered.start(i).toFixed(3); // Include numbers after the comma
+    //             let end = video.buffered.end(i).toFixed(3);
+    //             bufferedRanges.push(`[${start}, ${end}]`);
+    //         }
+    //         let message = `Buffered Ranges: ${bufferedRanges.join(', ')}`;
+    //         // Update existing buffer notification or create a new one
+    //         updateBufferNotification(message);
+    //     } else {
+    //         updateBufferNotification('No buffered ranges');
+    //     }
+    // }
+    // let bufferNotification; // Variable to hold the buffer notification element
+
+    // function updateBufferNotification(message) {
+        // if (!bufferNotification) {
+        //     bufferNotification = document.createElement('div');
+        //     bufferNotification.style.position = 'fixed';
+        //     bufferNotification.style.bottom = '60px';
+        //     bufferNotification.style.right = '40x';
+        //     bufferNotification.style.padding = '10px';
+        //     bufferNotification.style.background = 'blue';
+        //     bufferNotification.style.color = 'white';
+        //     bufferNotification.style.zIndex = '10000';
+    //         document.body.appendChild(bufferNotification);
+    //     }
+    //     bufferNotification.innerText = message;
+    // }
+
+    // Call the displayBufferedRanges function every second
+    // setInterval(displayBufferedRanges, 1000);
 });
