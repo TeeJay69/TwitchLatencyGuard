@@ -130,7 +130,7 @@ function getSetting(key) {
 }
 
 window.addEventListener('load', function() {
-    function main_listener(interval = 2000) {
+    function main_listener(interval = 3000) {
         let last_timeStamp = 0;
         return function(event) {
             if (event.timeStamp - last_timeStamp <= interval) return; // Event throttle
@@ -179,5 +179,5 @@ window.addEventListener('load', function() {
     }
 
     // Add the event listener for latency handling
-    document.addEventListener("timeupdate", main_listener(2000), true);
+    document.addEventListener("timeupdate", main_listener(3000), true);
 });

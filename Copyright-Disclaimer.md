@@ -1,9 +1,19 @@
 ## TwitchLatencyGuard Copyright (C) Disclaimer
 
-Copyright (C) [2024] [T. Jason Weber]
-
+Copyright (C) 2024 [T. Jason Weber]  
 All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are not permitted without prior written permission from [T. Jason Weber].
+### 1. **License Terms**  
+Redistribution, use, and modification of this software in source or binary forms are strictly prohibited without the prior written consent of [T. Jason Weber]. This software is provided solely for personal and educational purposes. Commercial use of the software, in whole or in part, is expressly forbidden without explicit permission.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+### 2. **Attribution**  
+Any authorized use of this software must provide proper credit to [T. Jason Weber], including attribution in any derivative works, presentations, or other related materials.
+
+### 3. **No Warranty**  
+This software is provided "AS IS," without any express or implied warranties, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The author is not liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruptions) arising in any way from the use of this software.
+
+### 4. **Jurisdiction**  
+This agreement is governed by the laws of Germany/Bavaria. Any disputes arising under or in connection with this agreement shall be subject to the exclusive jurisdiction of the courts of Germany/Bavaria.
+
+### 5. **Modification and Updates**  
+The author reserves the right to update, modify, or revoke this license at any time without prior notice.
