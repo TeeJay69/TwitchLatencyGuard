@@ -138,7 +138,7 @@ window.addEventListener('load', function() {
 
             // Existing code to get 'delay2f'
             const delay2a = document.querySelector(`[aria-label="Latency To Broadcaster"]`);
-            const delay2b = document.querySelector("#live-channel-stream-information > div > div > div.Layout-sc-1xcs6mc-0.dRGOOY > div > div.Layout-sc-1xcs6mc-0.evfzyg > div.Layout-sc-1xcs6mc-0.iStNQt > div.Layout-sc-1xcs6mc-0.hJHxso > div > div > button:nth-child(4) > div > span.ffz-stat-text");
+            const delay2b = document.querySelector('.ffz--meta-tray button:nth-child(4) .ffz-stat-text');
             let delay2;
             if (delay2b != null) {
                 delay2 = delay2b.textContent.match(/([0-9.]+)/)?.[1];
