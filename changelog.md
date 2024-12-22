@@ -1,3 +1,7 @@
+# v1.1.2
+## Fixes
+- New path to the ffz latency dom element. Refined for less issues in the future.
+
 # v1.1.1
 ## Fixes
 - Update version in manifest
