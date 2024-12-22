@@ -1,3 +1,8 @@
+# v1.1.1
+## Fixes
+- Update version in manifest
+- Update license
+
 # v1.1.0
 - Refactor of existing code
 - Adds additional features, that allow the user to change the method used for forwarding at high latency:

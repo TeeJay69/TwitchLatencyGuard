@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Twitch Latency Guard",
-    "version": "1.0",
+    "version": "1.1.1",
     "description": "Manage and reduce latency on Twitch streams.",
     "permissions": [ "storage", "scripting" ],
     "host_permissions": [
